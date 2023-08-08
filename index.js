@@ -79,7 +79,7 @@ async function deleteOlderReleases(keepLatest) {
     data = data || [];
     // filter for delete_pattern
     const activeMatchedReleases = data.filter(
-      ({ draft, tag_name }) => !draft && tag_name.indexOf(deletePattern) !== -1
+      ({ tag_name }) => tag_name.indexOf(deletePattern) !== -1
     );
 
     if (activeMatchedReleases.length === 0) {
